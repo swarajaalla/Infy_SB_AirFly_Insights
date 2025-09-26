@@ -5,8 +5,6 @@
 ## -Explore schema, types, size, and nulls
 ## -Perform sampling and memory optimizations
 
-# COMMAND ----------
-
 ### Goals
 #### -Analyze airline data to uncover operational trends and delay #patterns.
 #### -Help improve airline/airport performance through visual insights.
