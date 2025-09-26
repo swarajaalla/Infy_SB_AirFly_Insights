@@ -33,3 +33,13 @@ insights using visual analysis.
 • Load CSVs using pandas
 • Explore schema, types, size, and nulls
 • Perform sampling and memory optimizations
+
+# Week 2: Preprocessing and Feature Engineering
+• Handle nulls in delay and cancellation columns
+• Create derived features: Month, Day of Week, Hour, Route
+• Format datetime columns
+• Save preprocessed data for fast reuse
+Deliverables:
+• Cleaned dataset
+• Summary of preprocessing logic
+• Feature dictionary
