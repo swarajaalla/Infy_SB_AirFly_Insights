@@ -90,7 +90,7 @@ df.isnull().sum()
 
 # COMMAND ----------
 
-# DBTITLE 1,Save preprocessed data for fast reuse
+# DBTITLE 1,Save cleaned data for fast reuse
 df.to_csv("/Volumes/workspace/default/airlines/Flight_delay_cleaned.csv")
 
 # COMMAND ----------
