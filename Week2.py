@@ -22,6 +22,7 @@ df['CancellationCode'] = df['CancellationCode'].fillna('None')
 
 # DBTITLE 1,Fill the Nulls in Cancellation
 #Fill Empty cells of Cancelled column with 0 or 1 according to the CancellationCode if N then 0 otherwise 1
+print(df["Cancelled"].isnull().sum())
 df['Cancelled'] = df['CancellationCode'].fillna('N').apply(lambda x: 0 if x == 'N' else 1)
 
 # COMMAND ----------
@@ -90,7 +91,7 @@ df.isnull().sum()
 
 # COMMAND ----------
 
-# DBTITLE 1,Save cleaned data for fast reuse
+# DBTITLE 1,Save preprocessed data for fast reuse
 df.to_csv("/Volumes/workspace/default/airlines/Flight_delay_cleaned.csv")
 
 # COMMAND ----------
@@ -104,41 +105,6 @@ df.to_csv("/Volumes/workspace/default/airlines/Flight_delay_cleaned.csv")
 #Load Dataset
 import pandas as pd
 df1=pd.read_csv("/Volumes/workspace/default/airlines/Flight_delay_cleaned.csv")
-
-# COMMAND ----------
-
-# DBTITLE 1,2. Basic Exploration
-#Basic Exploration
-print("Shape of dataset:", df1.shape)
-print("Size of dataset:", df1.size)
-print("\n--- Info ---")
-print(df1.info())
-print("\n--- Columns ---")
-print(df1.columns)
-
-# COMMAND ----------
-
-print("\n--- Data Types ---")
-print(df1.dtypes)
-print("\n--- Describe ---")
-print(df1.describe())
-
-# COMMAND ----------
-
-print("\n--- Head ---")
-print(df1.head(10))
-print("\n--- Tail ---")
-print(df1.tail(10))
-
-# COMMAND ----------
-
-# DBTITLE 1,3. Data Quality Check
-# 3. Data Quality Checks
-print("\n--- Null Values ---")
-print(df1.isnull().sum())
-
-print("\n--- Duplicate Rows ---")
-print(df1.duplicated().sum())
 
 # COMMAND ----------
 
@@ -317,10 +283,10 @@ display(top_n_shortest_flights)
 # DBTITLE 1,13. Cancellations & Diversions
 # 13. Cancellations & Diversions
 # Cancellation & Diversion Rates
-cancellation_rate = df1['Cancelled'].mean().round(2)
+cancellation_rate = (df1['Cancelled'] == 1).mean().round(2)
 print("\nCancellation rate:", cancellation_rate)
 
-diversion_rate = df1['Diverted'].mean().round(2)
+diversion_rate = (df1['Diverted'] == 1).mean().round(2)
 print("Diversion rate:", diversion_rate)
 
 # COMMAND ----------
@@ -334,10 +300,6 @@ available_delay_cols = [col for col in delay_cols if col in df1.columns]
 delay_causes = df1[available_delay_cols].mean().round(2)
 print("\n--- Average Contribution of Delay Causes ---")
 display(delay_causes)
-
-# COMMAND ----------
-
-df1.isnull().sum()
 
 # COMMAND ----------
 
