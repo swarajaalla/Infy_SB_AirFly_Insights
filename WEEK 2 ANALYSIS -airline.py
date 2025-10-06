@@ -19,6 +19,15 @@ df.size
 
 # COMMAND ----------
 
+# Check for Duplicates before Dropping
+
+duplicate_rows = df[df.duplicated()]
+print("Number of duplicate rows before dropping:", duplicate_rows.shape[0])
+if not duplicate_rows.empty:
+    display(duplicate_rows.head())
+
+# COMMAND ----------
+
 df = df.drop_duplicates()
 
 # COMMAND ----------
