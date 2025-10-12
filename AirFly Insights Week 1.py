@@ -1,5 +1,4 @@
 # Databricks notebook source
-
 # Load CSV into a pandas DataFrame
 
 import pandas as pd
