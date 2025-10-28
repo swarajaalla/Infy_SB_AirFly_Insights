@@ -91,16 +91,25 @@ for col in df.select_dtypes(include=['object']).columns:
 
 # COMMAND ----------
 
-# Memory usage before optimization
+# Before optimization
 
 print("Memory usage BEFORE optimization:")
 print(df.memory_usage(deep=True))
+print(f"Total: {df.memory_usage(deep=True).sum() / 1024**2:.2f} MB")
 
-# Memory usage after optimization
+# Optimization
+df_opt = df.copy()
+df_opt = df_opt.apply(pd.to_numeric, downcast='float', errors='ignore')
+df_opt = df_opt.apply(pd.to_numeric, downcast='integer', errors='ignore')
+for c in df_opt.select_dtypes('object'):
+    if df_opt[c].nunique() / len(df_opt) < 0.5:
+        df_opt[c] = df_opt[c].astype('category')
+
+# After optimization
 
 print("\nMemory usage AFTER optimization:")
-print(df.memory_usage(deep=True))
-
+print(df_opt.memory_usage(deep=True))
+print(f"Total: {df_opt.memory_usage(deep=True).sum() / 1024**2:.2f} MB")
 
 # COMMAND ----------
 
