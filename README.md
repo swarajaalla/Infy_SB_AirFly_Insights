@@ -28,7 +28,3 @@ Documentation: Jupyter Notebook,VS Code GitHub, PDF
 >Identified peak delay periods and top-performing airlines.
 >Mapped route congestion and seasonal cancellation trends.
 >Developed a comprehensive dashboard for data exploration and reporting.
-
-📁 Deliverables
-
-Data Analytics Intern | AirFly Insights Project
