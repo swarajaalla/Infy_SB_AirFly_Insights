@@ -70,15 +70,15 @@ Key attributes include: flight date, carrier, origin, destination, delay times, 
 
 🧰 Tech Stack
 
-Category	                               Tools Used
+Category	  -                             Tools Used
 
-Programming Language	                   Python
+Programming Language	  -                 Python
 
-Data Handling	                           Pandas, NumPy
+Data Handling	         -                  Pandas, NumPy
 
-Visualization	                           Matplotlib, Seaborn, Plotly, Folium
+Visualization	          -                Matplotlib, Seaborn, Plotly, Folium
 
-Dashboard                                Power BI
+Dashboard               -                 Power BI
 
 
 📜 License
