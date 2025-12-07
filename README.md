@@ -1,4 +1,4 @@
-#AirFly Insights — Data Visualization and Analysis of Airline Operations
+AirFly Insights — Data Visualization and Analysis of Airline Operations
 
 🧭 Project Overview
 
@@ -37,7 +37,7 @@ A professional GitHub repository and presentation documenting the entire workflo
 
 Source: Kaggle Airlines Flights Data
 
-Contains over 60 million records of flight operations.
+Contains over 4 million records of flight operations.
 
 Covers multiple years, airlines, airports, and delay types.
 
@@ -48,47 +48,24 @@ Key attributes include: flight date, carrier, origin, destination, delay times, 
 
 1️⃣ Data Acquisition and Understanding
 
-Load and inspect airline data using pandas.
 
-Explore schema, datatypes, and missing values.
-
-Perform sampling and optimize memory usage.
 
 2️⃣ Data Cleaning and Feature Engineering
 
-Handle missing or inconsistent values in delay and cancellation fields.
-
-Create derived features such as Month, Day of Week, Hour, and Route.
-
-Format datetime columns and export cleaned data for reuse.
 
 3️⃣ Univariate and Bivariate Analysis
 
-Explore top airlines, busiest routes, and time-based patterns.
 
-Visualize distributions using bar charts, histograms, boxplots, and line plots.
 
 4️⃣ Delay Cause Analysis
 
-Compare delay causes by airline and weather condition.
-
-Analyze Carrier Delay, Weather Delay, NAS Delay, etc.
-
-Visualize average delay times by hour, day, and airport.
 
 5️⃣ Cancellation and Seasonal Trends
 
-Study monthly cancellation trends and their major causes (Carrier, Weather, NAS, Security).
-
-Identify seasonal peaks and holiday-related disruptions.
 
 6️⃣ Airport and Route-Level Exploration
 
-Analyze top 10 origin-destination pairs.
 
-Create heatmaps showing delay intensities.
-
-Map busiest airports using Folium or Plotly maps.
 
 
 🧰 Tech Stack
